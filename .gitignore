@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+/.idea
+.vagrant/
+docker-compose.yml
+*.swp
+cpu.prof
+mem.prof
+torch.svg
+trace.out

@@ -1,0 +1,30 @@
+syntax = "proto3";
+package journey;
+
+message CSS {
+    string url = 1;
+}
+
+message JS {
+    string url = 1;
+    string rootID = 2;
+}
+
+message Version {
+    repeated CSS css = 1;
+    repeated JS js = 2;
+}
+
+message Journey {
+    string name = 1;
+    string version = 2;
+    map<string, string> dependencies = 3;
+}
+
+message DependencyAssets {
+    repeated Version versions = 1;
+}
+
+service Explorer {
+    rpc GetDependencies (Journey) returns (DependencyAssets) {}
+}
